@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="{{url_for('static', filename='layout/css/w3.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='layout/css/fonts.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='layout/css/font-awesome.min.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='layout/css/style.css')}}">
+{% extends "layoutfront.html" %}
+{% block content %}
+  <h2 class="w3-wide w3-container w3-content w3-center">PAPAN INFORMASI</h2>
+  {% for info in infos %}
+    <div class="w3-container w3-content w3-center w3-padding-60" style="max-width:800px">
+      <p class="w3-opacity"><i>{{ info.title }}</i></p>
+      <p style="font-size: 16px" class="w3-justify">{{ info.konten|striptags }}</p>
+      <p style="font-size: 16px" class="w3-justify">{{ info.ttd }}</p>
+    </div>
+  {% endfor %}
+{% endblock content %}
+
+<script src="{{url_for('static', filename='layout/js/w3.js')}}"></script>

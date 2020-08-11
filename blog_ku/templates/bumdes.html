@@ -1,0 +1,92 @@
+<link rel="stylesheet" href="{{url_for('static', filename='layout/css/w3.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='layout/css/fonts.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='layout/css/font-awesome.min.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='layout/css/style.css')}}">
+{% extends "layoutfront.html" %}
+{% block content %}
+  <h2 class="w3-wide w3-container w3-content w3-center">BADAN USAHA MILIK DESA</h2>
+    <div class="w3-container w3-content w3-center w3-padding-60" style="max-width:800px">
+        {% for pengurus in pengurusbumdess %}
+        <p class="w3-opacity"><i>Pengurus BUMDES</i></p>
+        <table class="table w3-justify">
+    		  <thead class="table-danger">
+    		    <tr>
+    		      <th scope="col">Nama</th>
+    		      <th scope="col">Masa Jabatan</th>
+    		      <th scope="col">No Telpon</th>
+    		    </tr>
+    		  </thead>
+    		  <tbody>
+    		    <tr>
+    		      <td>{{ pengurus.nama_pengurus }}</td>
+    		      <td>{{ pengurus.masa_jabatan_pengurus }}</td>
+    		      <td>{{ pengurus.no_hp_pengurus }}</td>
+    		    </tr>
+    		  </tbody>
+        </table>
+        {% endfor %}
+        <br>
+
+        {% for a in adminbumdess %}
+        <p class="w3-opacity"><i>Administrasi Desa</i></p>
+        <table class="table w3-justify">
+          <thead class="table-warning">
+            <tr>
+              <th scope="col">Nama Kantor BUMDES</th>
+              <th scope="col">Alamat Kantor BUMDES</th>
+              <th scope="col">No Telpon Kantor BUMDES</th>
+              <th scope="col">Email BUMDES</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ a.nama_bumdes }}</td>
+              <td>{{ a.alamat_bumdes }}</td>
+              <td>{{ a.no_hp_bumdes }}</td>
+              <td>{{ a.email_bumdes }}</td>
+            </tr>
+          </tbody>
+        </table>
+        {% endfor %}
+        <br>
+
+        {% for u in unitusahas %}
+        <p class="w3-opacity"><i>Unit Usaha BUMDES</i></p>
+        <table class="table w3-justify">
+          <thead class="table-info">
+            <tr>
+              <th scope="col">Nama Unit Usaha</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ u.nama_unit_usaha }}</td>
+            </tr>
+          </tbody>
+        </table>
+        {% endfor %}
+        <br>
+
+        
+        <p class="w3-opacity"><i>Keuangan BUMDES</i></p>
+        <table class="table w3-justify">
+          <thead class="table-success">
+            <tr>
+              <th scope="col">Penyertaan Modal</th>
+              <th scope="col">Penambahan Modal</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for k in keuangans %}
+            <tr>
+              <td>{{ k.penyertaan_modal }}</td>
+              <td>{{ k.penambahan_modal }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        
+    </div>
+{% endblock content %}
+
+<script src="{{url_for('static', filename='layout/js/w3.js')}}"></script>

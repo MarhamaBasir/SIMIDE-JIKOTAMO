@@ -1,0 +1,276 @@
+<p class="w3-opacity"><i><b>Administrasi Desa</b></i></p>
+        {% for a in admindesas %}
+          <div class="w3-row-padding w3-padding-100" style="margin:0 -16px">
+            <div class="w3-third w3-margin-bottom">
+              <img src="{{url_for('static', filename='layout/icon/address.png')}}" class="w3-hover-opacity">
+                <p><b>Alamat kantor desa</b></p>
+                <p>{{ a.alamat }}</p>
+            </div>
+
+            <div class="w3-third w3-margin-bottom">
+              <img src="{{url_for('static', filename='layout/icon/number.png')}}" class="w3-hover-opacity">
+                <p><b>No telpon kantor desa</b></p>
+                <p>{{ a.no_hp }}</p>
+            </div>
+
+            <div class="w3-third w3-margin-bottom">
+              <img src="{{url_for('static', filename='layout/icon/email.png')}}" class="w3-hover-opacity">
+              <div class="w3-container w3-white">
+                <p><b>Emaill</b></p>
+                <p>{{ a.email }}</p>
+            </div>
+          </div>
+        {% endfor %}
+        <br><br>
+
+      <b><p class="w3-opacity"><i>Umum</i></p></b>
+        {% for u in umums %}
+          <div class="w3-row-padding w3-padding-100" style="margin:0px -16px">
+            <div class="w3-third w3-margin-bottom">
+              <img src="{{url_for('static', filename='layout/icon/map.png')}}" class="w3-hover-opacity">
+              <div class="w3-container w3-white">
+                <b><p>Luas desa</p></b>
+                <p>{{ u.luas_desa }}</p>
+              </div>
+            </div>
+
+            <div class="w3-third w3-margin-bottom">
+              <img src="{{url_for('static', filename='layout/icon/map.png')}}" class="w3-hover-opacity">
+              <div class="w3-container w3-white">
+                <b><p>Jumlah dusun</p></b>
+                <p>{{ u.jumlah_dusun }}</p>
+              </div>
+            </div>
+
+            <div class="w3-third w3-margin-bottom">
+              <img src="{{url_for('static', filename='layout/icon/compass.png')}}" class="w3-hover-opacity">
+              <div class="w3-container w3-white">
+                <b><p>Batas wilayah bagian utara</p></b>
+                <p>{{ u.utara }}</p>
+              </div>
+            </div>
+
+            <div class="w3-third w3-margin-bottom">
+              <img src="{{url_for('static', filename='layout/icon/compass.png')}}" class="w3-hover-opacity">
+              <div class="w3-container w3-white">
+                <b><p>Batas wilayah bagian selatan</p></b>
+                <p>{{ u.selatan }}</p>
+              </div>
+            </div>
+
+            <div class="w3-third w3-margin-bottom">
+              <img src="{{url_for('static', filename='layout/icon/compass.png')}}" class="w3-hover-opacity">
+              <div class="w3-container w3-white">
+                <b><p>Batas wilayah bagian barat</p></b>
+                <p>{{ u.barat }}</p>
+              </div>
+            </div>
+
+            <div class="w3-third w3-margin-bottom">
+              <img src="{{url_for('static', filename='layout/icon/compass.png')}}" class="w3-hover-opacity">
+              <div class="w3-container w3-white">
+                <b><p>Batas wilayah bagian timur</p></b>
+                <p>{{ u.timur }}</p>
+              </div>
+            </div>
+
+            <div class="w3-third w3-margin-bottom">
+              <img src="{{url_for('static', filename='layout/icon/pinpoint.png')}}" class="w3-hover-opacity">
+              <div class="w3-container w3-white">
+                <b><p>Jarak dari pusat kecamatan</p></b>
+                <p>{{ u.jarak_dari_kec }}</p>
+              </div>
+            </div>
+
+            <div class="w3-third w3-margin-bottom">
+              <img src="{{url_for('static', filename='layout/icon/pinpoint.png')}}" class="w3-hover-opacity">
+              <div class="w3-container w3-white">
+                <b><p>Jarak dari pusat kabupaten</p></b>
+                <p>{{ u.jarak_dari_kab }}</p>
+              </div>
+            </div>
+
+            <div class="w3-third w3-margin-bottom">
+              <img src="{{url_for('static', filename='layout/icon/pinpoint.png')}}" class="w3-hover-opacity">
+              <div class="w3-container w3-white">
+                <b><p>Jarak dari pusat provinsi</p></b>
+                <p>{{ u.jarak_dari_prov }}</p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        <br><br>
+
+
+      <p class="w3-opacity"><i><b>Penduduk</b></i></p>
+        {% for p in penduduks %}
+          <div class="w3-row-padding w3-padding-100" style="margin:0 -16px">
+            <div class="w3-third w3-margin-bottom">
+              <img src="{{url_for('static', filename='layout/icon/male.png')}}" class="w3-hover-opacity">
+              <div class="w3-container w3-white">
+                <p><b>Jumlah laki-laki</b></p>
+                <p>{{ p.jumlah_l }}</p>
+              </div>
+            </div>
+
+            <div class="w3-third w3-margin-bottom">
+              <img src="{{url_for('static', filename='layout/icon/female.png')}}" class="w3-hover-opacity">
+              <div class="w3-container w3-white">
+                <p><b>Jumlah perempuan</b></p>
+                <p>{{ p.jumlah_p }}</p>
+              </div>
+            </div>
+
+            <div class="w3-third w3-margin-bottom">
+              <img src="{{url_for('static', filename='layout/icon/conference.png')}}" class="w3-hover-opacity">
+              <div class="w3-container w3-white">
+                <p><b>Jumlah total</b></p>
+                <p>{{ p.total }}</p>
+              </div>
+            </div>
+
+            <div class="w3-third w3-margin-bottom">
+              <img src="{{url_for('static', filename='layout/icon/family.png')}}" class="w3-hover-opacity">
+              <div class="w3-container w3-white">
+                <p><b>Jumlah KK</b></p>
+                <p>{{ p.kk }}</p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        <br>
+
+     <!--    <p class="w3-opacity"><i><b>Sarana Penunjang</b></i></p>
+          {% for s in saranapenunjangs %}
+            <div class="w3-row-padding w3-padding-100" style="margin:0 50px">
+              <div class="w3-third w3-margin-bottom">
+                <img src="{{url_for('static', filename='layout/icon/school.png')}}" class="w3-hover-opacity">
+                <div class="w3-container w3-white">
+                  <p><b>PAUD</b></p>
+                  <p>{{ s.paud }}</p>
+                </div>
+              </div>
+              <div class="w3-third w3-margin-bottom">
+                <img src="{{url_for('static', filename='layout/icon/school.png')}}" class="w3-hover-opacity">
+                <div class="w3-container w3-white">
+                  <p><b>TK</b></p>
+                  <p>{{ s.tk }}</p>
+                </div>
+              </div>
+              <div class="w3-third w3-margin-bottom">
+                <img src="{{url_for('static', filename='layout/icon/school.png')}}" class="w3-hover-opacity">
+                <div class="w3-container w3-white">
+                  <p><b>SD</b></p>
+                  <p>{{ s.sd }}</p>
+                </div>
+              </div>
+              <div class="w3-third w3-margin-bottom">
+                <img src="{{url_for('static', filename='layout/icon/school.png')}}" class="w3-hover-opacity">
+                <div class="w3-container w3-white">
+                  <p><b>SMP</b></p>
+                  <p>{{ s.smp }}</p>
+                </div>
+              </div>
+              <div class="w3-third w3-margin-bottom">
+                <img src="{{url_for('static', filename='layout/icon/school.png')}}" class="w3-hover-opacity">
+                <div class="w3-container w3-white">
+                  <p><b>SMA</b></p>
+                  <p>{{ s.sma }}</p>
+                </div>
+              </div>
+              <div class="w3-third w3-margin-bottom">
+                <img src="{{url_for('static', filename='layout/icon/school.png')}}" class="w3-hover-opacity">
+                <div class="w3-container w3-white">
+                  <p><b>Pesantren/TPA</b></p>
+                  <p>{{ s.tpa }}</p>
+                </div>
+              </div>
+              <div class="w3-third w3-margin-bottom">
+                <img src="{{url_for('static', filename='layout/icon/hospital.png')}}" class="w3-hover-opacity">
+                <div class="w3-container w3-white">
+                  <p><b>PUSKESMAS</b></p>
+                  <p>{{ s.puskesmas }}</p>
+                </div>
+              </div>
+              <div class="w3-third w3-margin-bottom">
+                <img src="{{url_for('static', filename='layout/icon/hospital.png')}}" class="w3-hover-opacity">
+                <div class="w3-container w3-white">
+                  <p><b>POSYANDU</b></p>
+                  <p>{{ s.posyandu }}</p>
+                </div>
+              </div>
+            </div>
+          {% endfor %} -->
+
+      <b><p class="w3-opacity"><i>Sarana Penunjang</i></p></b>
+        <section class="content">
+          <div class="container-fluid">
+            <div class="row">    
+              {% for saranapenunjang in saranapenunjangs %}
+                <div class="col-lg-3 col-6"> 
+                    <div class="inner">
+                      <i><img src="{{url_for('static', filename='layout/icon/school.png')}}"></i>
+                      <h4>PAUD</h4>
+                      <p>{{ saranapenunjang.paud }}</p>    
+                    </div>      
+                </div>
+
+                 <div class="col-lg-3 col-6">
+                    <div class="inner">
+                      <i><img src="{{url_for('static', filename='layout/icon/school.png')}}"></i>
+                      <h4>TK</h4>
+                      <p>{{ saranapenunjang.tk }}</p>    
+                    </div>
+                </div>
+
+                 <div class="col-lg-3 col-6">
+                    <div class="inner">
+                      <i><img src="{{url_for('static', filename='layout/icon/school.png')}}"></i>
+                      <h4>SD</h4>
+                      <p>{{ saranapenunjang.sd }}</p>    
+                    </div>
+                </div>
+
+                 <div class="col-lg-3 col-6">
+                    <div class="inner">
+                      <i><img src="{{url_for('static', filename='layout/icon/school.png')}}"></i>
+                      <h4>SMP</h4>
+                      <p>{{ saranapenunjang.smp }}</p>    
+                    </div>
+                </div>
+
+                 <div class="col-lg-3 col-6">
+                    <div class="inner">
+                      <i><img src="{{url_for('static', filename='layout/icon/school.png')}}"></i>
+                      <h3>SMA</h3>
+                      <h6>{{ saranapenunjang.sma }}</h6>    
+                    </div>
+                </div>
+
+                 <div class="col-lg-3 col-6">
+                    <div class="inner">
+                      <i><img src="{{url_for('static', filename='layout/icon/school.png')}}"></i>
+                      <h3>TPA</h3>
+                      <h6>{{ saranapenunjang.tpa }}</h6>    
+                    </div>
+                </div>
+
+                 <div class="col-lg-3 col-6">
+                    <div class="inner">
+                      <i><img src="{{url_for('static', filename='layout/icon/hospital.png')}}"></i>
+                      <h3>PUSKESMAS</h3>
+                      <h6>{{ saranapenunjang.puskesmas }}</h6>    
+                    </div>
+                </div>
+
+                 <div class="col-lg-3 col-6">
+                    <div class="inner">
+                      <i><img src="{{url_for('static', filename='layout/icon/hospital.png')}}"></i>
+                      <h3>POSYANDU</h3>
+                      <h6>{{ saranapenunjang.posyandu }}</h6>    
+                    </div>
+                </div>
+              {% endfor %}       
+            </div>
+          </div>
+        </section>

@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="{{url_for('static', filename='layout/css/w3.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='layout/css/fonts.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='layout/css/font-awesome.min.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='layout/css/style.css')}}">
+{% extends "layoutfront.html" %}
+{% block content %}
+	    <h2 class="w3-wide w3-container w3-content w3-center">STRUKTUR PEMERINTAHAN</h2><br>
+	{% for gambar in gambars %}
+	    <div class="w3-container w3-content w3-center w3-padding-60" style="max-width:800px">
+	      <img class="w3-image" style="width:100%" src="{{ url_for('static', filename='foto/' + gambar.foto_struktur) }}">
+	    </div>
+	{% endfor %}
+	    <br><br><br>
+	    <h2 class="w3-wide w3-container w3-content w3-center">STRUKTUR ORGANISASI</h2><br>
+	{% for gambars in gambar %}
+	    <div class="w3-container w3-content w3-center w3-padding-60" style="max-width:800px">
+	      <img class="w3-image" style="width:100%" src="{{ url_for('static', filename='foto/' + gambars.foto_organisasi) }}">
+	    </div>
+	{% endfor %}
+{% endblock content %}
+
+<script src="{{url_for('static', filename='layout/js/w3.js')}}"></script>

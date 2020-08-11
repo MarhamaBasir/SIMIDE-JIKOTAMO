@@ -1,0 +1,176 @@
+<link rel="stylesheet" href="{{url_for('static', filename='layout/css/w3.css')}}">
+
+{% extends "layoutfront.html" %}
+{% block content %}
+  <h2 class="w3-wide w3-container w3-content w3-center">PROFILE DESA</h2>
+    <div class="w3-container w3-content w3-center w3-padding-60" style="max-width:800px">
+        
+        <p class="w3-opacity"><i>Perangkat Desa</i></p>
+        <table class="table w3-justify">
+    		  <thead class="table-danger">
+    		    <tr>
+    		      <th scope="col">Nama</th>
+    		      <th scope="col">Masa Jabatan</th>
+    		      <th scope="col">No Telpon</th>
+    		    </tr>
+    		  </thead>
+    		  <tbody>
+          {% for kades in kadess %} 
+    		    <tr>
+    		      <td>{{ kades.nama }}</td>
+    		      <td>{{ kades.masa_jabatan }}</td>
+    		      <td>{{ kades.no_hp }}</td>
+    		    </tr> 
+          {% endfor %}
+    		  </tbody>
+        </table>  
+        <br>
+
+        {% for a in admindesas %}
+        <p class="w3-opacity"><i>Administrasi Desa</i></p>
+        <table class="table w3-justify">
+          <thead class="table-warning">
+            <tr>
+              <th scope="col">Alamat Kantor Desa</th>
+              <th scope="col">No Telpon Kantor Desa</th>
+              <th scope="col">Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ a.alamat }}</td>
+              <td>{{ a.no_hp }}</td>
+              <td>{{ a.email }}</td>
+            </tr>
+          </tbody>
+        </table>
+        {% endfor %}
+        <br>
+
+        {% for u in umums %}
+        <p class="w3-opacity"><i>Umum</i></p>
+        <table class="table w3-justify">
+          <thead class="table-info">
+            <tr>
+              <th scope="col">Luas Desa</th>
+              <th scope="col">Jumlah Dusun</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ u.luas_desa }}</td>
+              <td>{{ u.jumlah_dusun }}</td>
+            </tr>
+            <tr >
+              <td colspan="2" align="center" scope="col"><b>Batas Wilayah Bagian</b></td>
+            </tr>
+            <tr>
+              <td>Utara</td>
+              <td>: {{ u.utara }}</td>
+            </tr>
+            <tr>
+              <td>Selatan</td>
+              <td>: {{ u.selatan }}</td>
+            </tr>
+            <tr>
+              <td>Barat</td>
+              <td>: {{ u.barat }}</td>
+            </tr>
+            <tr>
+              <td>Timur</td>
+              <td>: {{ u.timur }}</td>
+            </tr>
+            <tr >
+              <td colspan="2" align="center" scope="col"><b>Jarak dari Pusat</b></td>
+            </tr>
+            <tr>
+              <td>Kecamatan</td>
+              <td>: {{ u.jarak_dari_kec }}</td>
+            </tr>
+            <tr>
+              <td>Kabupaten</td>
+              <td>: {{ u.jarak_dari_kab }}</td>
+            </tr>
+            <tr>
+              <td>Provinsi</td>
+              <td>: {{ u.jarak_dari_prov }}</td>
+            </tr>
+          </tbody>
+        </table>
+        {% endfor %}
+        <br>
+
+        {% for p in penduduks %}
+        <p class="w3-opacity"><i>Perangkat Desa</i></p>
+          <table class="table w3-justify">
+          <thead class="table-success">
+            <tr>
+              <th scope="col">Jumlah Laki-laki</th>
+              <th scope="col">Jumlah Perempuan</th>
+              <th scope="col">Total</th>
+              <th scope="col">Jumlah KK</th>
+              <th scope="col">Tahun</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ p.jumlah_l }}</td>
+              <td>{{ p.jumlah_p }}</td>
+              <td>{{ p.total }}</td>
+              <td>{{ p.kk }}</td>
+              <td>{{ p.tahun }}</td>
+            </tr>
+          </tbody>
+        </table>
+        {% endfor %}
+        <br>
+      
+        {% for s in saranapenunjangs %}
+        <p class="w3-opacity"><i>Sarana Penunjang</i></p>
+          <table class="table w3-justify">
+              <tr >
+                <td colspan="2" align="center" scope="col"><b>Fasilitas Pendidikan</b></td>
+              </tr>
+              <tr>
+                <td>PAUD</td>
+                <td>: {{ s.paud }}</td>
+              </tr>
+              <tr>
+                <td>TK</td>
+                <td>: {{ s.tk }}</td>
+              </tr>
+              <tr>
+                <td>SD</td>
+                <td>: {{ s.sd }}</td>
+              </tr>
+              <tr>
+                <td>SMP/MTS</td>
+                <td>: {{ s.smp }}</td>
+              </tr>
+              <tr>
+                <td>SMA/MA</td>
+                <td>: {{ s.sma }}</td>
+              </tr>
+              <tr>
+                <td>Pesantren/Balai Pengajian</td>
+                <td>: {{ s.tpa }}</td>
+              </tr>
+              <tr >
+                <td colspan="2" align="center" scope="col"><b>Fasilitas Kesehatan</b></td>
+              </tr>
+              <tr>
+                <td>PUSKESMAS</td>
+                <td>: {{ s.puskesmas }}</td>
+              </tr>
+              <tr>
+                <td>POSYANDU</td>
+                <td>: {{ s.posyandu }}</td>
+              </tr>
+            </tbody>
+          </table>
+        {% endfor %}
+    </div>
+   
+{% endblock content %}
+
+<script src="{{url_for('static', filename='layout/js/w3.js')}}"></script>
